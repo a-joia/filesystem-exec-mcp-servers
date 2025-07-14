@@ -7,8 +7,6 @@ This file now delegates to submodules by operation class:
 - filesystem.py: Filesystem & code-editing tools
 - exec_debug.py: Code execution & debugging
 - analysis.py: Static & dynamic analysis
-- vcs.py: VCS & diff helpers
-- ai_tools.py: AI-powered generators & refactors
 
 Import from these modules directly for new code.
 """
