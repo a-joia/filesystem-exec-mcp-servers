@@ -1,0 +1,6 @@
+scripts:
+  - scripts/test_filesystem.py
+  - scripts/test_filesystem_edit_modes.py
+  - scripts/test_filesystem_features.py
+  - scripts/test_exec_debug.py
+  - scripts/test_analysis.py 

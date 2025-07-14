@@ -1,0 +1,38 @@
+
+services:
+  mcp-server:
+    build: .
+    environment:
+      - MCP_MODE=${MCP_MODE:-stdio}
+      - RECORDS_PATH=${RECORDS_PATH:-}
+      # To use a custom workspace directory, change the left side of the next line:
+      # - ../myworkspace:/app/.workspace
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+      - .workspace:/app/.workspace
+  mcp-server-http:
+    build: .
+    environment:
+      - MCP_MODE=http
+      - RECORDS_PATH=${RECORDS_PATH:-}
+      # To use a custom workspace directory, change the left side of the next line:
+      # - ../myworkspace:/app/.workspace
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - .workspace:/app/.workspace
+  test:
+    build: .
+    command: ["pytest", "test/scripts"]
+    volumes:
+      - .:/app
+      - .workspace:/app/.workspace
+    environment:
+      - MCP_MODE=stdio
+      # To use a custom workspace directory, change the left side of the next line:
+      # - ../myworkspace:/app/.workspace
+    stdin_open: true
+    tty: true 
