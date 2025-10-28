@@ -216,5 +216,3 @@ This project provides robust, workspace-contained tools for file editing, backup
 - All results are returned as dictionaries (or lists for some analysis functions), with `"status": "success"` or `"error"` and detailed fields.
 
 ---
-
-If you need example usage or more details for any function, see the code or tests, or ask for examples!
